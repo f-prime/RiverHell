@@ -20,7 +20,7 @@ class Player(GameObject):
         Because of d = vt. Distance is velocity * time. Our time in this case
         is the time since the last frame. So we are calculating how far the object
         on the screen should move from one frame to the next if it is traveling at
-        1000 pixels per second. 
+        250 (self.speed) pixels per second. 
         """
 
         distance = self.speed * game.dt
