@@ -1,4 +1,4 @@
-from typing import *
+import sys
 
 import pygame
 import time
@@ -53,5 +53,11 @@ class Game(object):
         return self.dt
 
     def update(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+
         for game_object in self.game_objects:
             game_object.update(self)
+
+        pygame.display.update()
