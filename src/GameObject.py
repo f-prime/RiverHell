@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class GameObject(ABC):
     """
     This is just an abstract game object. Other game objects
@@ -9,6 +10,11 @@ class GameObject(ABC):
     Other than this, inheritance should not be used.
     """
 
+    @property
     @abstractmethod
-    def update(self, game: "Game") -> None:
+    def id(self):
+        ...
+
+    @abstractmethod
+    def update(self, game):
         ...
