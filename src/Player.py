@@ -20,7 +20,12 @@ class Player(GameObject):
         Because of d = vt. Distance is velocity * time. Our time in this case
         is the time since the last frame. So we are calculating how far the object
         on the screen should move from one frame to the next if it is traveling at
-        250 (self.speed) pixels per second. 
+        250 (self.speed) pixels per second.
+        
+        Doing this allows objects moving on the screen to be framerate dependent. If we didn't do this,
+        our speed would be locked to the framerate and would appear to change with the framerate. That
+        is bad. It also lets us do cool things like slow down/speed up time globally if we so desire simply
+        by modifying how game.dt gets updated in the Game object.
         """
 
         distance = self.speed * game.dt
